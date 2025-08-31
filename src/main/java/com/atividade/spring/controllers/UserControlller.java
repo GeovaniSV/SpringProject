@@ -1,8 +1,9 @@
 package com.atividade.spring.controllers;
 
+import com.atividade.spring.controllers.dto.CreateUserDTO;
+import com.atividade.spring.controllers.dto.UpdateUserDTO;
 import com.atividade.spring.domain.User;
 import com.atividade.spring.services.UserServices;
-import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

@@ -10,32 +10,32 @@ import lombok.Setter;
 import java.util.List;
 
 @Entity
-@Table(name = "users")
+@Table(name = "posts")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class Post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String username;
-    private String email;
-    private String password;
+    private String content;
+    private int authorId;
 
-    @OneToMany(mappedBy = "user")
-    @JsonIgnore
-    private List<Post> posts;
-
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "post")
     @JsonIgnore
     private List<Comment> comments;
 
-    public User(String username, String email, String password) {
-        this.username = username;
-        this.email = email;
-        this.password = password;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    public Post(String content, User user, int i) {
+        this.content = content;
+        this.authorId = i;
+        this.user = user;
     }
 }

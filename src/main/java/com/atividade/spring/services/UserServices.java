@@ -1,7 +1,7 @@
 package com.atividade.spring.services;
 
-import com.atividade.spring.controllers.CreateUserDTO;
-import com.atividade.spring.controllers.UpdateUserDTO;
+import com.atividade.spring.controllers.dto.CreateUserDTO;
+import com.atividade.spring.controllers.dto.UpdateUserDTO;
 import com.atividade.spring.domain.User;
 import com.atividade.spring.repository.UserRepository;
 import org.springframework.stereotype.Service;
